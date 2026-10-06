@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Training Plans — Absolute Fit | Personalised Workout Programs</title>
+  <meta name="description" content="Get your free personalised workout plan from Absolute Fit. Select your sex, goal, and experience level to reveal a professional 5-day weekly program." />
+  <link rel="icon" type="image/png" href="images/logo/Absolutefitlogo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/workout.css" />
+</head>
+<body class="workout-page">
+
+  <!-- ── Navbar ─────────────────────────────────── -->
+  <nav class="navbar scrolled" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo" aria-label="Absolute Fit — Home">
+        <img src="images/logo/Absolutefit_longyellowlogo.jpeg" alt="Absolute Fit Logo" style="height:38px;width:auto;object-fit:contain;" />
+      </a>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="index.html#home"       class="nav-link">Home</a></li>
+        <li><a href="index.html#about"      class="nav-link">About</a></li>
+        <li><a href="index.html#services"   class="nav-link">Services</a></li>
+        <li><a href="index.html#why-us"     class="nav-link">Why Us</a></li>
+        <li><a href="index.html#membership" class="nav-link">Membership</a></li>
+        <li><a href="index.html#contact"    class="nav-link">Contact</a></li>
+        <li><a href="workout.html"          class="nav-link" style="color:var(--yellow)">Workout Plans</a></li>
+        <li>
+          <a href="https://absolutecafeco.netlify.app/" class="nav-cafe-link" target="_blank" rel="noopener noreferrer">
+            Visit Absolute Cafe →
+          </a>
+        </li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- ── Page Header ────────────────────────────── -->
+  <header class="wp-header">
+    <div class="wp-header-bg">
+      <img src="images/interior/Absolutefit_interior2.jpg" alt="" role="presentation" />
+      <div class="wp-header-overlay"></div>
+    </div>
+    <div class="wp-header-content">
+      <div class="section-eyebrow">Absolute Fit — Coaching Dept.</div>
+      <h1 class="wp-title">Your Plan.<br /><em>Your Rules.</em></h1>
+      <p class="wp-subtitle">Answer three questions. Get a professional 5-day weekly programme — built for your body, your goal, and your level.</p>
+      <div class="wp-trainer-badge">
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2l1.8 5.4H18l-4.9 3.6 1.9 5.6L10 13.3l-5 3.3 1.9-5.6L2 7.4h6.2z" fill="#F5C800"/></svg>
+        Designed by Absolute Fit Professional Certified Trainers
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Selector ───────────────────────────────── -->
+  <section class="wp-selector" aria-label="Plan selector">
+    <div class="container">
+
+      <div class="selector-grid">
+
+        <!-- Sex -->
+        <div class="selector-group" data-group="sex">
+          <div class="selector-label">
+            <span class="selector-num">01</span>
+            <span>I am</span>
+          </div>
+          <div class="selector-buttons" role="group" aria-label="Select sex">
+            <button class="sel-btn" data-value="male"   aria-pressed="false">Male</button>
+            <button class="sel-btn" data-value="female" aria-pressed="false">Female</button>
+          </div>
+        </div>
+
+        <!-- Goal -->
+        <div class="selector-group" data-group="goal">
+          <div class="selector-label">
+            <span class="selector-num">02</span>
+            <span>My goal is</span>
+          </div>
+          <div class="selector-buttons" role="group" aria-label="Select goal">
+            <button class="sel-btn" data-value="fitness"    aria-pressed="false">Fitness</button>
+            <button class="sel-btn" data-value="fat-loss"   aria-pressed="false">Fat Loss</button>
+            <button class="sel-btn" data-value="weight-gain" aria-pressed="false">Weight Gain</button>
+          </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="selector-group" data-group="experience">
+          <div class="selector-label">
+            <span class="selector-num">03</span>
+            <span>Experience level</span>
+          </div>
+          <div class="selector-buttons" role="group" aria-label="Select experience">
+            <button class="sel-btn" data-value="beginner"     aria-pressed="false">Beginner</button>
+            <button class="sel-btn" data-value="intermediate" aria-pressed="false">Intermediate</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA -->
+      <div class="selector-cta" id="selectorCta" aria-live="polite">
+        <div class="selector-pending">
+          <div class="pending-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <p>Select all three options above to reveal your plan.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Plan Output ────────────────────────────── -->
+  <section class="wp-plan-output" id="planOutput" aria-live="polite" aria-label="Your workout plan">
+    <div class="container" id="planContainer">
+      <!-- Injected by JS -->
+    </div>
+  </section>
+
+  
+
+  <!-- ── Guidelines ────────────────────────────── -->
+  <section class="wp-guidelines">
+    <div class="container">
+      <div class="guidelines-grid">
+
+        <div class="guideline-card">
+          <div class="guideline-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2"/><path d="M16 8v8l5 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Rest Intervals</h3>
+          <ul>
+            <li>Compound lifts — <strong>90–120 sec</strong></li>
+            <li>Isolation exercises — <strong>60–90 sec</strong></li>
+            <li>Fat Loss circuits — <strong>30–45 sec</strong></li>
+            <li>Weight Gain (5×5) — <strong>2–3 min</strong></li>
+            <li>Core exercises — <strong>30–60 sec</strong></li>
+          </ul>
+        </div>
+
+        <div class="guideline-card guideline-card--yellow">
+          <div class="guideline-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M16 3l2.5 8H27l-7 5 2.5 8L16 19l-6.5 5L12 16l-7-5h8.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>General Rules</h3>
+          <ul>
+            <li>Warm up <strong>5–10 min</strong> before every session</li>
+            <li>Cool down with <strong>5 min</strong> static stretching</li>
+            <li>Drink <strong>3–4 litres</strong> of water daily</li>
+            <li><strong>Form &gt; Weight</strong> — always</li>
+            <li>Sleep <strong>7–9 hours</strong> for recovery</li>
+          </ul>
+        </div>
+
+        <div class="guideline-card">
+          <div class="guideline-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none"><rect x="4" y="8" width="24" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M4 13h24M10 8V5M22 8V5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Weekly Schedule</h3>
+          <ul>
+            <li>Train <strong>5 days / week</strong></li>
+            <li>Day 6 &amp; 7 — <strong>Active recovery</strong></li>
+            <li>Light walk, stretching, yoga on rest days</li>
+            <li>Same time each day builds <strong>consistency</strong></li>
+          </ul>
+        </div>
+
+        <div class="guideline-card">
+          <div class="guideline-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M8 28V16M16 28V4M24 28V12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Progressive Overload</h3>
+          <ul>
+            <li>Increase weight by <strong>2.5–5 kg</strong> when reps feel easy</li>
+            <li>Log your weights every session</li>
+            <li>Consistency beats perfection</li>
+            <li>Results show in <strong>4–8 weeks</strong></li>
+          </ul>
+        </div>
+
+        <div class="guideline-card">
+          <div class="guideline-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M6 16c0-5.523 4.477-10 10-10s10 4.477 10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="4" y="16" width="4" height="7" rx="1" stroke="currentColor" stroke-width="2"/><rect x="24" y="16" width="4" height="7" rx="1" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3>Supplements</h3>
+          <ul>
+            <li><strong>Whey protein</strong> — post-workout</li>
+            <li><strong>Creatine</strong> — 3–5g/day (monohydrate)</li>
+            <li><strong>Caffeine</strong> — 100–200mg pre-workout</li>
+            <li><strong>Omega-3 &amp; Vitamin D3</strong> — daily</li>
+            <li>Food first. Supplements are secondary.</li>
+          </ul>
+        </div>
+
+        <div class="guideline-card">
+          <div class="guideline-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M16 4c0 0-8 4-8 12s8 12 8 12 8-4 8-12S16 4 16 4z" stroke="currentColor" stroke-width="2"/><path d="M16 4v24M8 16h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Need Guidance?</h3>
+          <ul>
+            <li>Our trainers build <strong>custom plans</strong></li>
+            <li>Diet consultancy available</li>
+            <li>Personal training sessions</li>
+            <li><a href="index.html#contact" class="guideline-link">Book a session →</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── Cafe Fuel Banner ──────────────────────── -->
+  <section class="wp-cafe-banner">
+    <div class="container">
+      <div class="cafe-banner-inner">
+        <div class="cafe-banner-text">
+          <br>
+          <div class="section-eyebrow">Nutrition Partner</div>
+          <h2 class="cafe-banner-title">Fuel Your Workout with<br /><em>Absolute Cafe &amp; Co.</em></h2>
+          <p class="cafe-banner-sub">Pick up a pre or post-workout healthy meal from our sister brand — designed to complement your training and keep your body fuelled right.</p>
+          <p class="cafe-cheat-note">
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="flex-shrink:0;margin-top:2px"><path d="M10 2l1.8 5.4H18l-4.9 3.6 1.9 5.6L10 13.3l-5 3.3 1.9-5.6L2 7.4h6.2z" fill="#F5C800"/></svg>
+            <span>You can have cheat meals <strong>1–2 times a week</strong>. Don't kill your cravings — balance is the key.</span>
+          </p>
+          <div class="cafe-banner-btns">
+            <a href="https://wa.me/919310184974" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Order on Cafe WhatsApp
+            </a>
+            <a href="https://drive.google.com/drive/folders/112RlgNZk064QAKQy4ggT1FL3U4J07hQK" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">
+              View Full Menu →
+            </a>
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Personal Training CTA ─────────────────── -->
+  <section class="wp-pt-cta">
+    <div class="container">
+      <div class="pt-cta-inner">
+        <div class="pt-cta-text">
+          <div class="section-eyebrow">Take It Further</div>
+          <h2 class="pt-cta-title">Need Guidance &amp;<br /><em>A Custom Plan?</em></h2>
+          <p class="pt-cta-sub">These plans are a great starting point — but nothing beats a programme built exclusively for <em>you</em>. Our certified trainers study your body composition, goals, and lifestyle to craft a plan that delivers faster, smarter results.</p>
+          <ul class="pt-cta-features">
+            <li>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#F5C800" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="#F5C800" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><strong>1-on-1 Personal Training Sessions</strong> with certified coaches</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#F5C800" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="#F5C800" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><strong>Custom workout &amp; diet plans</strong> tailored to your exact body &amp; goal</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#F5C800" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="#F5C800" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><strong>Progress tracking</strong> &amp; form correction every session</span>
+            </li>
+            <li>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#F5C800" stroke-width="1.5"/><path d="M6 10l3 3 5-5" stroke="#F5C800" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span><strong>Maximum results</strong> in minimum time — zero guesswork</span>
+            </li>
+          </ul>
+          <div class="pt-cta-btns">
+            <button type="button" class="btn btn-primary btn-large" id="openInquiryBtn" style="cursor:pointer;border:none;">Quick Inquiry →</button>
+            <a href="tel:07217759688" class="btn btn-ghost-light">Call Us: 072177 59688</a>
+          </div>
+        </div>
+        <div class="pt-cta-visual" aria-hidden="true">
+          <img src="images/models/536aaa6b-78cf-4b39-abb3-43beae1c4087.JPG" alt="" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Address Footer -->
+  <footer class="wp-address-footer">
+    <div class="container">
+      <div class="wp-address-inner">
+        <img src="images/logo/Absolutefit_longyellowlogo.jpeg" alt="Absolute Fit" class="wp-address-logo" />
+        <div class="wp-address-details">
+          <div class="wp-address-item">
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2C7.24 2 5 4.24 5 7c0 4.5 5 11 5 11s5-6.5 5-11c0-2.76-2.24-5-5-5zm0 6.5A1.5 1.5 0 1 1 10 5a1.5 1.5 0 0 1 0 3.5z" fill="currentColor"/></svg>
+            <span>Absolute Fit, A-1167/68, 2nd & 3rd Floor, Mayur Vihar Phase 3, New Delhi – 110096</span>
+          </div>
+          <div class="wp-address-item">
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 4h3l1.5 3.5-1.75 1.75a11 11 0 0 0 4 4L11.5 11.5 15 13v3a1 1 0 0 1-1 1C7.16 17 3 12.84 3 5a1 1 0 0 1 1-1z" fill="currentColor"/></svg>
+            <span>+91 72177 59688</span>
+          </div>
+          <div class="wp-address-item">
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M10 6v4l2.5 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span>Mon – Sat: 6:00 AM – 10:00 PM &nbsp;|&nbsp; Sun: 8:00 AM – 8:00 PM</span>
+          </div>
+        </div>
+        <a href="https://maps.app.goo.gl/2giKgera62vvqVSTA" target="_blank" class="wp-address-map">
+          <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2C7.24 2 5 4.24 5 7c0 4.5 5 11 5 11s5-6.5 5-11c0-2.76-2.24-5-5-5zm0 6.5A1.5 1.5 0 1 1 10 5a1.5 1.5 0 0 1 0 3.5z" fill="currentColor"/></svg>
+          Get Directions
+        </a>
+      </div>
+      <p class="wp-address-copy">© 2025 Absolute Fit. All rights reserved. &nbsp;·&nbsp; Designed &amp; Developed by <strong style="color:rgba(255,255,255,0.45)">Dipanshu</strong></p>
+    </div>
+  </footer>
+
+  <!-- Inquiry Modal -->
+  <div class="inquiry-modal-overlay" id="inquiryModalOverlay"></div>
+  <div class="inquiry-modal" id="inquiryModal">
+    <button class="inquiry-modal-close" id="inquiryModalClose" aria-label="Close"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+
+    <h2 class="inquiry-title">Get Started Today</h2>
+    <p class="inquiry-subtitle">Tell us what you're interested in and we'll get back to you on WhatsApp</p>
+
+    <!-- What are you interested in? -->
+    <div class="inquiry-section">
+      <h3 class="inquiry-label">What are you interested in?</h3>
+      <div class="inquiry-buttons" id="inquiryType" data-group="type">
+        <button class="inquiry-btn" data-value="Membership">Membership</button>
+        <button class="inquiry-btn" data-value="Personal Training">Personal Training</button>
+        <button class="inquiry-btn" data-value="Trial Session">Trial Session</button>
+        <button class="inquiry-btn" data-value="Class Info">Class Info</button>
+        <button class="inquiry-btn" data-value="General Inquiry">General Inquiry</button>
+      </div>
+    </div>
+
+    <!-- Which day? -->
+    <div class="inquiry-section">
+      <h3 class="inquiry-label">Which day?</h3>
+      <div class="inquiry-buttons" id="inquiryDay" data-group="day">
+        <button class="inquiry-btn" data-value="Today">Today</button>
+        <button class="inquiry-btn" data-value="Tomorrow">Tomorrow</button>
+        <button class="inquiry-btn" data-value="This week">This week</button>
+      </div>
+    </div>
+
+    <!-- What time suits you? -->
+    <div class="inquiry-section">
+      <h3 class="inquiry-label">What time suits you?</h3>
+      <div class="inquiry-buttons" id="inquiryTime" data-group="time">
+        <button class="inquiry-btn" data-value="Morning (6am-12pm)">Morning (6-12)</button>
+        <button class="inquiry-btn" data-value="Afternoon (12pm-5pm)">Afternoon (12-5)</button>
+        <button class="inquiry-btn" data-value="Evening (5pm-10pm)">Evening (5-10)</button>
+      </div>
+    </div>
+
+    <!-- Your name -->
+    <div class="inquiry-section">
+      <label class="inquiry-label" for="inquiryName">Your name</label>
+      <input type="text" id="inquiryName" class="inquiry-input" placeholder="Optional" maxlength="50" />
+    </div>
+
+    <!-- Submit -->
+    <button class="inquiry-submit" id="inquirySubmit">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16.6915026,12.4744748 L3.50612381,13.2599618 C3.19218622,13.2599618 3.03521743,13.4170592 3.03521743,13.5741566 L1.15159189,20.0151496 C0.8376543,20.8006365 0.99,21.89 1.77946707,22.52 C2.41,22.99 3.50612381,23.1 4.13399899,22.99 L21.714504,14.0454487 C22.6563168,13.5741566 23.1272231,12.6315722 22.9702544,11.6889879 L4.13399899,0.0368664339 C3.34915502,0.0368664339 2.40734225,0.143962407 1.77946707,0.603448275 C0.994623095,1.38934809 0.837654326,2.17523862 1.15159189,3.12782305 L3.03521743,9.56881717 C3.03521743,9.72591456 3.19218622,9.88301195 3.50612381,9.88301195 L16.6915026,10.6685061 C16.6915026,10.6685061 17.1624089,10.6685061 17.1624089,10.1972141 L17.1624089,11.2902844 C17.1624089,11.2902844 17.1624089,10.6685061 16.6915026,10.6685061 Z"/></svg>
+      Send request on WhatsApp
+    </button>
+  </div>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/917217759688" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <img src="images/logo/whatsapp.png" alt="WhatsApp" />
+  </a>
+
+  <script src="js/main.js"></script>
+  <script src="js/workout.js"></script>
+</body>
+</html>
